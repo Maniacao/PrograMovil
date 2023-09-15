@@ -8,13 +8,14 @@
     justify-content: center; /* Centrar verticalmente */
     height: 100%; /* Altura del 100% de la ventana */
     background-color: rgb(24, 37, 73);
+    color: rgb(255, 255, 255);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
 ion-item.custom-bg {
    --background: rgb(100, 100, 12);
    border-radius: 10px;
-   
+   color: rgb(255, 255, 255);
 }  
 
 

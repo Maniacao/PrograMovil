@@ -11,23 +11,24 @@
     <hr>
     <div class="ion-text-center ion-align-items-center">
       <form [formGroup]="formularioLogin">
+        <h5 class="ion-text-center text-left">Correo Electronico</h5>
+        <ion-item class="custom-bg">
+          <ion-label position="floating">Correo electronico</ion-label>
+          <ion-input formControlName="correo"></ion-input>
+        </ion-item>
 
-       <h5 class="ion-text-center text-left">Correo</h5>
-      <ion-item class="custom-bg">
-        <ion-label position="floating">Correo</ion-label>
-        <ion-input formControlName="correo"></ion-input>
-      </ion-item>
-
-      <hr>
-      <h5 class="ion-text-center text-left">Contraseña</h5>
-      <ion-item class="custom-bg">
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input formControlName="password" type="password"></ion-input>
-      </ion-item>
-    </form>
+        <hr>
+        <h5 class="ion-text-center text-left">Contraseña</h5>
+        <ion-item class="custom-bg">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+      </form>
       <hr>
       <hr>
-      <hr>
+      <ion-label>
+        <a [routerLink]="['/recuperacion']">Olvidaste tu contraseña? pincha aqui</a>
+      </ion-label>
       <hr>
       <hr>
       <ion-button class="custom-button" expand="full" (click)="ingresar()">Ingresar</ion-button>
@@ -35,5 +36,3 @@
     </div>
   </div>
 </ion-content>
-
-
