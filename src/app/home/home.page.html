@@ -1,17 +1,23 @@
-<ion-header [translucent]="true">
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <div>
-      <br>
-      <h1 size="large" class="ion-text-center" style="color: rgb(255, 255, 255);">Bienvenido</h1>
+<ion-content>
+  <div class="container">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <h1 size="large" style="color: rgb(255, 255, 255);">Bienvenido</h1>
+      <hr>
+      <ion-avatar id="avatar" #avatar>
+        <img alt="Silhouette of a person's head"
+          src="https://w7.pngwing.com/pngs/802/786/png-transparent-google-account-google-search-customer-service-google-logo-login-button-blue-sphere-car-rental-thumbnail.png"
+          class="avatar-image" />
+      </ion-avatar>
+      <hr>
+      <div style="margin-top: 10px;">
+        <ion-label style="color: rgb(255, 255, 255);">{{ correoUsuario }}</ion-label>
+      </div>
+      <hr>
     </div>
-  </ion-header>
-  <div id="container">
-    <ion-avatar id="avatar" #avatar>
-      <img alt="Silhouette of a person's head"
-        src="https://w7.pngwing.com/pngs/802/786/png-transparent-google-account-google-search-customer-service-google-logo-login-button-blue-sphere-car-rental-thumbnail.png" />
-    </ion-avatar>
+    <div class="ion-text-center ion-align-items-center">
+      <ion-button class="custom-button" expand="full" routerLink="/creaviaje">CREAR VIAJE</ion-button>
+      <hr>
+      <ion-button class="custom-button" expand="full" routerLink="/home"> &nbsp; BUSCAR VIAJE &nbsp;</ion-button>
+    </div>
   </div>
 </ion-content>
