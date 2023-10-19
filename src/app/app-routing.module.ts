@@ -24,12 +24,14 @@ const routes: Routes = [
     loadChildren: () => import('./recuperacion/recuperacion.module').then( m => m.RecuperacionPageModule)
   },
   {
-    path: '**',
-    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
-  },  {
     path: 'creaviaje',
     loadChildren: () => import('./creaviaje/creaviaje.module').then( m => m.CreaviajePageModule)
   },
+  {
+    path: '**',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
+  },
+  
 
 
 
