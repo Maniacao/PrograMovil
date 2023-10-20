@@ -10,14 +10,18 @@
       </ion-avatar>
       <hr>
       <div style="margin-top: 10px;">
-        <ion-label style="color: rgb(255, 255, 255);">{{ correoUsuario }}</ion-label>
+        <!-- Interpolación para mostrar el correo del usuario -->
+        <ion-label style="color: rgb(255, 255, 255);">{{ userService.currentUserEmail }}</ion-label>
       </div>
       <hr>
     </div>
     <div class="ion-text-center ion-align-items-center">
       <ion-button class="custom-button" expand="full" [routerLink]="['/creaviaje']">CREAR VIAJE</ion-button>
       <hr>
-      <ion-button class="custom-button" expand="full" routerLink="/home"> &nbsp; BUSCAR VIAJE &nbsp;</ion-button>
+      <ion-button class="custom-button" expand="full" [routerLink]="['/buscarviaje']"> &nbsp; BUSCAR VIAJE &nbsp;</ion-button>
+      <hr>
+      <!-- Botón para cerrar sesión -->
+      <ion-button class="custom-button" expand="full" (click)="logout()">Cerrar Sesión</ion-button>
     </div>
   </div>
 </ion-content>

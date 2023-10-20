@@ -1,5 +1,32 @@
+
+
+
+
 <ion-content>
   <div class="container">
-    <h5 class="ion-text-center text-left">Correo Electronico</h5>
+    <h1>Crea tu viaje</h1>
+    <hr>
+    <!-- Destino -->
+    <ion-item class="custom-bg">
+      <ion-label position="floating">Destino</ion-label>
+      <ion-input type="text" [(ngModel)]="destino"></ion-input>
+    </ion-item>
+    <hr>
+    <!-- Tarifa -->
+    <ion-item class="custom-bg">
+      <ion-label position="floating">Tarifa</ion-label>
+      <ion-input type="number" [(ngModel)]="tarifa"></ion-input>
+    </ion-item>
+    <hr>
+    <!-- Capacidad -->
+    <ion-item class="custom-bg">
+      <ion-label position="floating">Capacidad</ion-label>
+      <ion-input type="number" [(ngModel)]="capacidad"></ion-input>
+    </ion-item>
+    <hr>
+    <ion-button class="custom-button" expand="full" (click)="guardarDestino()">&nbsp;Crear&nbsp;</ion-button>
+    <ion-button class="custom-button" expand="full" routerLink="/home">&nbsp;Volver&nbsp;</ion-button>
   </div>
 </ion-content>
+
+

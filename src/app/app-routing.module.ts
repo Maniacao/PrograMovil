@@ -28,9 +28,15 @@ const routes: Routes = [
     loadChildren: () => import('./creaviaje/creaviaje.module').then( m => m.CreaviajePageModule)
   },
   {
+    path: 'buscarviaje',
+    loadChildren: () => import('./buscarviaje/buscarviaje.module').then( m => m.BuscarviajePageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
   },
+
+
   
 
 

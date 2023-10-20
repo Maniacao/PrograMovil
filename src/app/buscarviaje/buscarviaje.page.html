@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Viajes Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-list>
+      <!-- Itera a través de la lista de viajes -->
+      <ion-item *ngFor="let viaje of viajes" (click)="seleccionarViaje($event, viaje)">
+        <ion-label>
+          <h2>Destino: {{ viaje.destino }}</h2>
+          <h2>Tarifa: {{ viaje.tarifa }}</h2>
+          <h2>Capacidad: {{ viaje.capacidad }}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button class="custom-button" expand="full" routerLink="/home">&nbsp;Volver&nbsp;</ion-button>
+    <ion-button class="custom-button" expand="full" (click)="eliminarViajes()">Eliminar Viajes</ion-button>
+  </div>
+</ion-content>

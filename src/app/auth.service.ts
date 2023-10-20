@@ -1,6 +1,4 @@
-// auth.service.ts
 import { Injectable } from '@angular/core';
-
 
 @Injectable({
   providedIn: 'root',
@@ -8,20 +6,21 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private isAuthenticated = false;
 
-  login(email: string, password: string): boolean {
-    // Aquí, puedes realizar la validación de correo y contraseña como desees
-    if (email === 'ch.figueroah@duocuc.cl' && password === 'cris123') {
-      this.isAuthenticated = true;
-      return true;
-    }
-    return false;
+  // Establecer el estado de autenticación
+  setAuthenticated(isAuthenticated: boolean): void {
+    this.isAuthenticated = isAuthenticated;
   }
 
-  logout(): void {
-    this.isAuthenticated = false;
-  }
-
-  isLoggedIn(): boolean {
+  // Verificar si el usuario está autenticado
+  isAuthenticatedUser(): boolean {
     return this.isAuthenticated;
+  }
+
+  // Método para cerrar la sesión
+  logout(): void {
+    // Aquí puedes realizar tareas de cierre de sesión si es necesario
+    // Por ejemplo, eliminar tokens de autenticación, datos de usuario, etc.
+    // Luego, establece el estado de autenticación como falso
+    this.isAuthenticated = false;
   }
 }

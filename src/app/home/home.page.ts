@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class HomePage implements OnInit {
   correoUsuario: string | null;
 
-  constructor() {
-    // Recuperar la cadena JSON del usuario desde el localStorage
-    const usuarioGuardado = localStorage.getItem('correo');
-
-    // Parsear la cadena JSON para obtener el objeto de usuario
-    const usuario = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
-
-    // Obtener el correo del objeto de usuario
-    this.correoUsuario = usuario ? usuario.correo : null;
+  constructor(public userService: UserService, private router: Router) {
+    // Puedes inicializar correoUsuario con el valor del usuario actual desde el UserService
+    this.correoUsuario = this.userService.currentUserEmail;
   }
 
   ngOnInit() {}
-}
 
+  async logout() {
+    // Llama al método de cierre de sesión de UserService
+    this.userService.logout();
+
+    // Redirige a la página de inicio de sesión (o cualquier otra página que desees)
+    this.router.navigate(['/login']); // Asegúrate de importar el Router y tenerlo disponible en tu componente.
+  }
+}

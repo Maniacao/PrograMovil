@@ -12,11 +12,7 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
-ion-item.custom-bg {
-   --background: rgb(100, 100, 12);
-   border-radius: 10px;
-   color: rgb(255, 255, 255);
-}  
+
 
 
 .text-left {
@@ -58,11 +54,6 @@ ion-button {
     --padding-end: 0 !important;
   }
 
-  ion-item ion-label {
-    text-align: center;
-  }
-
-
   ion-card-content {
     --background:transparent;
   }
@@ -76,3 +67,18 @@ ion-button {
   background-color: rgb(100, 100, 12); /* Azul marino para el fondo interior */
   color: white; /* Texto en blanco para mejor contraste en el fondo azul */
 }
+
+/* En tu archivo .scss o .css */
+ion-item ion-label {
+    --background: transparent; /* Fondo transparente para el ion-label */
+    text-align: center;
+  }
+  
+  ion-item ion-label h2 {
+    font-size: 20px; /* Tamaño de fuente más grande para el destino */
+    margin-bottom: 5px; /* Espacio entre el destino y los detalles */
+  }
+  
+  ion-item ion-label p {
+    margin: 0; /* Elimina el margen en los detalles (tarifa y capacidad) */
+  }
