@@ -26,8 +26,24 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
+  ionViewWillLeave() {
+    // Esta función se ejecuta cuando la página se está dejando (navegando a otra página)
+    // Aquí puedes borrar los valores de los campos del formulario
+    this.formularioLogin.reset();
+  }
+
   async ingresar() {
     const f = this.formularioLogin.value;
+  
+    if (!f.correo || !f.password) {
+      const alert = await this.alertController.create({
+        header: 'Campos vacíos',
+        message: 'Por favor, completa todos los campos.',
+        buttons: ['Aceptar']
+      });
+      await alert.present();
+      return;
+    }
   
     try {
       const isAuthenticated = await this.userService.authenticateUser(f.correo, f.password);

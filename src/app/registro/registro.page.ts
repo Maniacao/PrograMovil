@@ -45,7 +45,8 @@ export class RegistroPage implements OnInit {
 
     const usuario: UserModel = {
       correo: f.correo,
-      password: f.password
+      password: f.password,
+      token: null // Incluye el token como null al registrar un nuevo usuario
     };
 
     this.userService.addUser(usuario).then(async () => {

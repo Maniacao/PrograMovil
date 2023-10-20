@@ -1,84 +1,65 @@
 .container {
-    width: 100%; /* El tamaño del contenedor que desees */
-    max-width: 100%; /* El ancho máximo del contenedor */
-    margin: 0 auto; /* Centrar horizontalmente */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar verticalmente */
-    height: 100%; /* Altura del 100% de la ventana */
-    background-color: rgb(24, 37, 73);
-    color: rgb(255, 255, 255);
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-
-
-
-
-.text-left {
-    text-align: left !important;
-    font-size: 90%;
-  }
-
-.letras-inicio {
-    font-size: 200%;
-
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(24, 37, 73);
+  color: rgb(255, 255, 255);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.letras-inicio-1 {
-    font-size: 100%;
+ion-item.custom-bg {
+  --background: rgb(100, 100, 12);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
 }
-
 
 .custom-button {
-    border-radius: 25px;
-    border: 4px solid white;
-    background-color: transparent !important;
-    color: white;
-  }
-  
+  border-radius: 25px;
+  border: 4px solid white;
+  background-color: transparent !important;
+  color: white;
+}
 
-  .custom-button:focus {
-    outline: none !important;
-    box-shadow: none !important;
-    border-color: white;
-  }
-
+.custom-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: white;
+}
 
 ion-button {
-    --background: transparent !important;
-    --border-radius: 0 !important;
-    --border-width: 0 !important;
-    --color: #000 !important; 
-    --padding-start: 0 !important;
-    --padding-end: 0 !important;
-  }
-
-  ion-card-content {
-    --background:transparent;
-  }
-
-  /* Añade estos estilos en tu archivo .scss asociado a tu página */
-.custom-card {
-  background-color: #FFD700; /* Amarillo oscuro para el fondo exterior */
+  --background: transparent !important;
+  --border-radius: 0 !important;
+  --border-width: 0 !important;
+  --color: #000 !important;
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
 }
 
-.custom-content {
-  background-color: rgb(100, 100, 12); /* Azul marino para el fondo interior */
-  color: white; /* Texto en blanco para mejor contraste en el fondo azul */
-}
-
-/* En tu archivo .scss o .css */
 ion-item ion-label {
-    --background: transparent; /* Fondo transparente para el ion-label */
-    text-align: center;
-  }
-  
-  ion-item ion-label h2 {
-    font-size: 20px; /* Tamaño de fuente más grande para el destino */
-    margin-bottom: 5px; /* Espacio entre el destino y los detalles */
-  }
-  
-  ion-item ion-label p {
-    margin: 0; /* Elimina el margen en los detalles (tarifa y capacidad) */
-  }
+  --background: transparent !important;
+  text-align: center;
+}
+
+ion-item ion-label h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+ion-item ion-label p {
+  margin: 0;
+}
+
+/* Estilos personalizados para el encabezado */
+ion-header {
+  background-color: rgb(24, 37, 73);
+  color: white;
+}
+
+ion-toolbar {
+  --background: transparent !important;
+}

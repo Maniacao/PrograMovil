@@ -5,6 +5,7 @@ export interface UserModel {
   id?: number;
   correo: string;
   password: string;
+  token: string | null; // Nueva propiedad para el token JWT
 }
 
 @Injectable({
@@ -12,15 +13,17 @@ export interface UserModel {
 })
 export class UserService {
   private db: Dexie;
-  currentUserEmail: string | null; // Propiedad para almacenar el correo del usuario actual
+  currentUserEmail: string | null;
+  currentUserToken: string | null; // Propiedad para almacenar el token del usuario actual
 
   constructor() {
     this.db = new Dexie('UserDatabase');
     this.db.version(1).stores({
-      users: '++id,correo,password',
+      users: '++id,correo,password,token', // Agregar 'token' a la definición de la base de datos
     });
 
-    this.currentUserEmail = null; // Inicializa currentUserEmail como nulo
+    this.currentUserEmail = null;
+    this.currentUserToken = null; // Inicializa currentUserToken como nulo
   }
 
   async addUser(user: UserModel): Promise<void> {
@@ -35,7 +38,8 @@ export class UserService {
     const user = await this.getUserByEmail(correo);
 
     if (user && user.password === password) {
-      this.currentUserEmail = correo; // Establece currentUserEmail con el correo del usuario autenticado
+      this.currentUserEmail = correo;
+      this.currentUserToken = user.token; // Almacena el token del usuario
       return true;
     }
 
@@ -56,7 +60,8 @@ export class UserService {
 
   // Agregar el método logout para borrar información de usuario almacenada
   logout(): void {
-    this.currentUserEmail = null; // Cuando el usuario cierra sesión, establece currentUserEmail como nulo
+    this.currentUserEmail = null;
+    this.currentUserToken = null; // Elimina el token al cerrar sesión
     // También puedes eliminar cualquier otra información de usuario almacenada
   }
 }
